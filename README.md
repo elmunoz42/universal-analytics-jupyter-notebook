@@ -34,7 +34,7 @@ Copy3. Place your Universal Analytics CSV reports in the `data/` directory.
 ```python
 from functions import build_ua_pages_dataframe
 df = build_ua_pages_dataframe('your_folder_name')
-
+```
 Open the Jupyter notebook and adjust the folder names for your desired folders to import the data correctly.
 
 ## Data Analysis
