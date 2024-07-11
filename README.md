@@ -29,13 +29,8 @@ This project focuses on consolidating and analyzing data from multiple Universal
 1. Clone this repository.
 2. Install the required Python libraries:
 pip install pandas seaborn plotly jupyter
-Copy3. Place your Universal Analytics CSV reports in the `data/` directory.
-4. Run the data consolidation script:
-```python
-from functions import build_ua_pages_dataframe
-df = build_ua_pages_dataframe('your_folder_name')
-```
-Open the Jupyter notebook and adjust the folder names for your desired folders to import the data correctly.
+3. Place your Universal Analytics CSV reports in the `data/` directory.
+4. Open the Jupyter notebook and adjust the folder names for your desired folders to import the data correctly.
 
 ## Data Analysis
 The Jupyter notebooks demonstrate various analyses, including:
