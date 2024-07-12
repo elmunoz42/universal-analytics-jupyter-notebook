@@ -74,7 +74,7 @@ def build_ua_pages_dataframe(folder):
             combined_df[col] = combined_df[col].str.rstrip('%').astype('float') / 100.0
 
     if 'Avg. Session Duration' in combined_df.columns:
-        combined_df['Avg. Session Duration'] = pd.to_timedelta(combined_df['Avg. Session Duration'])
+        combined_df['Avg. Session Duration'] = combined_df['Avg. Session Duration'].apply(clean_duration)
 
     numeric_columns = ['Users', 'New Users', 'Sessions', 'Pages / Session']
     for col in numeric_columns:
@@ -89,7 +89,18 @@ def build_ua_pages_dataframe(folder):
     print(f"Saved consolidated data to {output_file}")
 
     return combined_df
-
+    
+def clean_duration(duration):
+    if pd.isna(duration) or duration == '':
+        return pd.Timedelta(seconds=0)
+    if isinstance(duration, str):
+        duration = duration.replace('<', '').strip()
+        try:
+            return pd.to_timedelta(duration)
+        except ValueError:
+            print(f"Warning: Could not convert '{duration}' to timedelta. Setting to 0 seconds.")
+            return pd.Timedelta(seconds=0)
+    return duration
 
 # Convert Quarter to a month number
 def quarter_to_month(quarter):
