@@ -3,7 +3,7 @@ import os
 from datetime import datetime
 from IPython.display import display, HTML
 
-def build_ua_pages_dataframe(folder):
+def build_ua_pages_dataframe(folder, filetag='pages'):
     base_path = 'data'
     full_path = os.path.join(base_path, folder)
     all_data = []
@@ -84,7 +84,8 @@ def build_ua_pages_dataframe(folder):
     # Save to CSV
     output_folder = os.path.join('output', folder)
     os.makedirs(output_folder, exist_ok=True)
-    output_file = os.path.join(output_folder, 'consolidated-pages.csv')
+    output_file_name = 'consolidated-' + filetag + '.csv'
+    output_file = os.path.join(output_folder, output_file_name)
     combined_df.to_csv(output_file, index=False)
     print(f"Saved consolidated data to {output_file}")
 
