@@ -1,6 +1,7 @@
 import pandas as pd
 import os
 from datetime import datetime
+from IPython.display import display, HTML
 
 def build_ua_pages_dataframe(folder):
     base_path = 'data'
@@ -94,3 +95,20 @@ def build_ua_pages_dataframe(folder):
 def quarter_to_month(quarter):
     quarter_dict = {'Q1': '01', 'Q2': '04', 'Q3': '07', 'Q4': '10'}
     return quarter_dict.get(quarter, '01')  # Default to '01' if not found
+
+def display_html_plot(file_path):
+    """
+    Display an HTML plot in a Jupyter notebook.
+
+    Parameters:
+    file_path (str): The path to the HTML file.
+
+    Returns:
+    None
+    """
+    # Open the HTML file and read its content
+    with open(file_path, 'r') as f:
+        html_string = f.read()
+
+    # Display the HTML string in the Jupyter notebook
+    display(HTML(html_string))
