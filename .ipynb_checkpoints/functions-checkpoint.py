@@ -88,3 +88,9 @@ def build_ua_pages_dataframe(folder):
     print(f"Saved consolidated data to {output_file}")
 
     return combined_df
+
+
+# Convert Quarter to a month number
+def quarter_to_month(quarter):
+    quarter_dict = {'Q1': '01', 'Q2': '04', 'Q3': '07', 'Q4': '10'}
+    return quarter_dict.get(quarter, '01')  # Default to '01' if not found
