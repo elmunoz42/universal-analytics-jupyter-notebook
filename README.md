@@ -21,6 +21,8 @@ This project focuses on consolidating and analyzing data from multiple Universal
 ## Project Structure
 
 - `functions.py`: Contains utility functions for data processing and consolidation.
+- `UA-data-consolidation-and-analysis.ipynb`: Contains the main logic where you read, clean up and plot the data. Save the plots so that they can be used by your summary report.
+- `Summary report`: Create it based on the example, add it to the Output folder and adjust the paths to match the name of your plots.
 - `data/`: Directory containing the raw Universal Analytics CSV reports. THIS BRANCH IS GITIGNORED ADD YOUR OWN DATA HERE.
 - `output/`: Directory where the consolidated CSV file is saved. THIS BRANCH IS GITIGNORED ADD YOUR OWN DATA HERE.
 
