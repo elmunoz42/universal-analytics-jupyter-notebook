@@ -37,10 +37,9 @@ pip install pandas seaborn plotly jupyter
 ## Data Analysis
 The Jupyter notebooks demonstrate various analyses, including:
 
-Trend analysis of key metrics over time
-Comparison of different traffic sources
-Visualization of user engagement metrics
-Correlation analysis between different data points
+- Trend analysis of key metrics over time
+- Comparison of different traffic sources
+- Visualization of user engagement metrics
 
 ## Customization
 You can easily extend the analysis by adding new Jupyter notebooks or modifying the existing ones. The consolidated dataset provides a solid foundation for a wide range of analytical approaches.
